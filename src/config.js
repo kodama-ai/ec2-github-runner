@@ -16,7 +16,8 @@ class Config {
       runnerHomeDir: core.getInput('runner-home-dir'),
       preRunnerScript: core.getInput('pre-runner-script'),
       blockDeviceMappings: JSON.parse(core.getInput('block-device-mappings')),
-      runAsService: core.getInput('run-runner-as-service')
+      runAsService: core.getInput('run-runner-as-service') === 'true',
+      runAsUser: core.getInput('run-runner-as-user')
     };
 
     const tags = JSON.parse(core.getInput('aws-resource-tags'));
